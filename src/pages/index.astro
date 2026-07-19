@@ -12,7 +12,7 @@ import { useTranslations } from '../i18n/utils';
 const lang = 'zh';
 const t = useTranslations(lang);
 ---
-<BaseLayout lang={lang} profile={profile} title={`Haosheng Wu · 作品集`} description={profile.about[0]}>
+<BaseLayout lang={lang} profile={profile} title="Haosheng Wu" description={profile.about[0]}>
   <SectionNav t={t} slot="nav" />
   <About profile={profile} heading={t('section.about')} />
   <Skills profile={profile} heading={t('section.skills')} />
