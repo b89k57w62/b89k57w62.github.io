@@ -4,8 +4,7 @@ const profileZh: Profile = {
   name: '吳昊聲',
   title: '後端工程師',
   about: [
-    '目前在線上娛樂城團隊擔任後端工程師；在這之前，也參與 GCP 上的 RAG（檢索增強生成）應用。',
-    '工作之外，你通常可以在慢跑的路上、游泳池裡或雪季的滑雪場找到我。'
+    '目前在線上娛樂城團隊擔任後端工程師；在這之前，也參與 GCP 上的 RAG（檢索增強生成）應用。'
   ],
   skills: [
     { group: '後端', items: ['Ruby on Rails', 'Node.js', 'Python', 'PostgreSQL', 'MySQL', 'MongoDB'] },
