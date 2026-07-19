@@ -1,0 +1,11 @@
+---
+interface Props { lang: 'zh' | 'en' }
+const { lang } = Astro.props;
+const toZh = '/';
+const toEn = '/en/';
+---
+<div class="flex gap-2 text-sm font-mono">
+  <a href={toZh} class={lang === 'zh' ? 'text-accent' : 'text-slate hover:text-accent'}>中文</a>
+  <span class="text-slate">/</span>
+  <a href={toEn} class={lang === 'en' ? 'text-accent' : 'text-slate hover:text-accent'}>EN</a>
+</div>

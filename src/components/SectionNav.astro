@@ -1,0 +1,22 @@
+---
+interface Props { t: (key: any) => string }
+const { t } = Astro.props;
+const items = [
+  { href: '#about', label: t('nav.about') },
+  { href: '#skills', label: t('nav.skills') },
+  { href: '#services', label: t('nav.services') },
+  { href: '#experience', label: t('nav.experience') },
+  { href: '#projects', label: t('nav.projects') },
+];
+---
+<nav aria-label={t('nav.landmark')}>
+  <ul class="space-y-3">
+    {items.map((i) => (
+      <li>
+        <a href={i.href} class="text-sm font-mono uppercase tracking-widest text-slate hover:text-accent transition-colors">
+          {i.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

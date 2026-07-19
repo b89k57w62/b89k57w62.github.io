@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectCard from './ProjectCard.astro';
+interface Props { lang: 'zh' | 'en'; heading: string }
+const { lang, heading } = Astro.props;
+const entries = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+---
+<section id="projects" aria-label={heading}>
+  <h2 class="mb-4 text-sm font-mono uppercase tracking-widest text-lightest-slate">{heading}</h2>
+  <div class="space-y-6">
+    {entries.map((entry) => (
+      <ProjectCard entry={entry} lang={lang} />
+    ))}
+  </div>
+</section>

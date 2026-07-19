@@ -1,0 +1,11 @@
+---
+import type { Profile } from '../data/types';
+interface Props { profile: Profile; heading: string }
+const { profile, heading } = Astro.props;
+---
+<section id="about" aria-label={heading}>
+  <h2 class="mb-4 text-sm font-mono uppercase tracking-widest text-lightest-slate">{heading}</h2>
+  <div class="space-y-4">
+    {profile.about.map((p) => <p class="text-slate leading-relaxed">{p}</p>)}
+  </div>
+</section>

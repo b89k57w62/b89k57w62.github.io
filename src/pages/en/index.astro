@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionNav from '../../components/SectionNav.astro';
+import About from '../../components/About.astro';
+import Skills from '../../components/Skills.astro';
+import Services from '../../components/Services.astro';
+import Experience from '../../components/Experience.astro';
+import Certifications from '../../components/Certifications.astro';
+import Projects from '../../components/Projects.astro';
+import profile from '../../data/profile.en.ts';
+import { useTranslations } from '../../i18n/utils';
+const lang = 'en';
+const t = useTranslations(lang);
+---
+<BaseLayout lang={lang} profile={profile} title={`${profile.name} · Portfolio`} description={profile.about[0]}>
+  <SectionNav t={t} slot="nav" />
+  <About profile={profile} heading={t('section.about')} />
+  <Skills profile={profile} heading={t('section.skills')} />
+  <Services profile={profile} heading={t('section.services')} />
+  <Experience profile={profile} heading={t('section.experience')} />
+  <Certifications profile={profile} heading={t('section.certifications')} />
+  <Projects lang={lang} heading={t('section.projects')} />
+</BaseLayout>

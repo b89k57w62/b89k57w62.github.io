@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+import type { Profile } from '../data/types';
+import Sidebar from '../components/Sidebar.astro';
+interface Props { lang: 'zh' | 'en'; profile: Profile; title: string; description: string }
+const { lang, profile, title, description } = Astro.props;
+const htmlLang = lang === 'zh' ? 'zh-Hant' : 'en';
+---
+<html lang={htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class="font-sans">
+    <div class="mx-auto max-w-5xl px-6 lg:flex lg:gap-12">
+      <Sidebar lang={lang} profile={profile}>
+        <slot name="nav" slot="nav" />
+      </Sidebar>
+      <main class="lg:w-[55%] lg:py-24 py-12 space-y-24">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

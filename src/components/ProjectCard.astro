@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+interface Props {
+  entry: CollectionEntry<'projects'>;
+  lang: 'zh' | 'en';
+}
+const { entry, lang } = Astro.props;
+const d = entry.data;
+const title = lang === 'zh' ? d.title_zh : d.title_en;
+const description = lang === 'zh' ? d.description_zh : d.description_en;
+---
+<article class="group grid gap-4 rounded-lg p-4 transition-colors hover:bg-white/5 sm:grid-cols-[10rem_1fr]">
+  <Image
+    src={d.image}
+    alt={title}
+    width={320}
+    height={200}
+    class="rounded border border-white/10 object-cover"
+  />
+  <div>
+    <div class="flex items-baseline justify-between gap-2">
+      <h3 class="text-lightest-slate">{title}</h3>
+      <span class="text-xs font-mono text-slate">{d.year}</span>
+    </div>
+    <p class="mt-1 text-sm text-slate">{description}</p>
+    <ul class="mt-3 flex flex-wrap gap-2">
+      {d.techTags.map((tg) => (
+        <li class="rounded bg-white/5 px-2 py-0.5 text-xs font-mono text-accent">{tg}</li>
+      ))}
+    </ul>
+  </div>
+</article>
