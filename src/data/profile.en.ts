@@ -31,7 +31,7 @@ const profileEn: Profile = {
       period: '2024/9 — 2025/3',
       role: 'Cloud Developer',
       org: 'ThinkPower (Taiwan Branch)',
-      summary: 'Delivered GCP proof-of-concepts and production systems: independently shipped an e-commerce RAG copywriting PoC, and co-built a Hyundai repair knowledge-base adopted for internal client use.',
+      summary: 'Delivered GCP proof-of-concepts and production systems: shipped an e-commerce RAG copywriting PoC, and co-built a Hyundai repair knowledge-base adopted for internal client use.',
       tags: ['GCP', 'Vertex AI Search', 'Cloud Run', 'RAG'],
     },
   ],
